@@ -21,6 +21,10 @@ export class AppointmentStore extends VuexModule  {
         if (index < this.items.length) this.items.splice(index, 1);
     }
 
+    @Mutation completeItem(index: number): void {
+        if (index < this.items.length) this.items[index].complete = !this.items[index].complete;
+    }
+
     @Mutation setItems(value: Appointment[]): void {
         this.items = value ?? []
     }
@@ -31,6 +35,10 @@ export class AppointmentStore extends VuexModule  {
     }
     @Action remove(index: number) {
         this.removeItem(index);
+        return this.save();
+    }
+    @Action complete(index: number) {
+        this.completeItem(index);
         return this.save();
     }
 

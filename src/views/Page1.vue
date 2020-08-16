@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-end">
         <button class="btn btn-primary m-1" @click="add"> Add</button>
       </div>
-      <list :items="items" @remove="remove"></list>
+      <list :items="items" @remove="remove" @complete="complete"></list>
   </div>
 </template>
 
@@ -34,6 +34,10 @@ export default class Page1 extends Vue {
 
   remove(index: number) {
     AppointmentModule.remove(index);
+  }
+
+  complete(index: number) {
+    AppointmentModule.complete(index);
   }
 }
 </script>

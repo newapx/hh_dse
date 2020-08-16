@@ -5,7 +5,7 @@
       <div class="form-control input-group-text" :class="{'complete': item.complete}">{{dateToShow(item)}} {{item.name}}</div>
       <div class="input-group-prepend">
         <div class="input-group-text">
-          <input type="checkbox" value="complete" v-model="item.complete">
+          <input type="checkbox" value="complete" :checked="item.complete" @change="change(index)">
         </div>
       </div>
       <div class="input-group-append">
@@ -32,6 +32,10 @@ export default class Tab1 extends Vue {
     if (confirm("Are you sure to delete this appointment?")){
         this.$emit("remove", index);
     }
+  }
+
+  change(index: number) {
+    this.$emit('complete', index);
   }
 
 }
