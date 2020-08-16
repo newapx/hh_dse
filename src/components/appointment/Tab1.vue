@@ -1,8 +1,10 @@
 <template>
 <div>
   <item-detail :item="item" />
-  <button @click.stop="back">Back</button>
-  <button @click.stop="next" :disabled="disableNext">Next</button>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-secondary" @click.stop="back">Back</button>
+    <button class="btn btn-primary ml-2" @click.stop="next" :disabled="disableNext">Next</button>
+  </div>
 </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="app"> 
+  <div id="app" class="container-sm"> 
     <a class="readme" href="/README.md"> README</a>
     <router-view/>
   </div>
@@ -10,8 +10,9 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h1 {
   text-align: center;
-  color: #2c3e50;
 }
 .readme {
   position: absolute;

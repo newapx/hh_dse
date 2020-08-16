@@ -1,9 +1,17 @@
 <template>
 <div>
-  <div v-for="(item, index) in items" :key="index" :class="{'complete': item.complete}">
-    <span>{{dateToShow(item)}}</span> <span>{{item.name}}</span>
-    <input type="checkbox" value="complete" v-model="item.complete">
-    <button @click.stop="remove(index)"> X </button>
+  <div class="my-1" v-for="(item, index) in items" :key="index">
+    <div class="input-group">
+      <div class="form-control input-group-text" :class="{'complete': item.complete}">{{dateToShow(item)}} {{item.name}}</div>
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="checkbox" value="complete" v-model="item.complete">
+        </div>
+      </div>
+      <div class="input-group-append">
+        <button type="button" class="btn btn-primary" @click.stop="remove(index)"> X </button>
+      </div>
+    </div>
   </div>
 </div>
 </template>

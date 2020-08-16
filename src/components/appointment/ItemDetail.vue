@@ -1,9 +1,18 @@
 <template>
 <div>
   <form v-if="item" class="">
-		<input type="text" v-model="item.name" :readonly="readOnly">
-		<input type="datetime-local" v-model="date" :readonly="readOnly">
-		<textarea v-model="item.note" placeholder="Input note for appointment" :readonly="readOnly"></textarea>
+    <div class="form-group">
+      <label>Full name</label>
+      <input type="text" class="form-control" v-model="item.name" :readonly="readOnly" required>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="datetime-local" class="form-control" v-model="date" :readonly="readOnly" required>
+    </div>
+    <div class="form-group">
+      <label>Note</label>
+      <textarea class="form-control" v-model="item.note" placeholder="Input note for appointment" :readonly="readOnly"></textarea>
+    </div>
   </form>
   <div v-else>
     No data

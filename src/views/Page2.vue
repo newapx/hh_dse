@@ -1,6 +1,14 @@
 <template>
   <div>
     <h1>New appointment</h1>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" :class="{'active': step==1, 'disabled': step!=1}" href="#">Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :class="{'active': step==2, 'disabled': step!=2}" href="#">Confirmation</a>
+      </li>
+    </ul>
     <tab1 v-if="step==1" :item="appointment" @next="step=2" @back="back"></tab1>
     <tab2 v-if="step==2" :item="appointment" @next="save" @back="step=1"></tab2>
   </div>

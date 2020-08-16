@@ -1,7 +1,10 @@
 <template>
   <div class="">
-    <h1>Appointments</h1> <button @click="add"> Add</button>
-    <list :items="items" @remove="remove"></list>
+      <h1>Appointments</h1> 
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary m-1" @click="add"> Add</button>
+      </div>
+      <list :items="items" @remove="remove"></list>
   </div>
 </template>
 

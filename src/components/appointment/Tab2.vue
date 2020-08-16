@@ -1,8 +1,10 @@
 <template>
 <div>
   <item-detail :item="item" :read-only="true"/>
-  <button @click.stop="back">Back</button>
-  <button v-if="item" @click.stop="next">Create</button>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-secondary" @click.stop="back">Back</button>
+    <button v-if="item" class="btn btn-primary ml-2" @click.stop="next">Create</button>
+  </div>
 </div>
 </template>
 
